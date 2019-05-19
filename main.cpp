@@ -24,6 +24,7 @@ int main(int argc, char const *argv[]){
 
     for(std::list<Funcionario*>::iterator it=funcionarios.begin(); it != funcionarios.end(); ++it){
         (*it)->details();
+        (*it)->save();
     }
 
 

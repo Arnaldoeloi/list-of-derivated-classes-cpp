@@ -7,6 +7,7 @@ Author: Arnaldo Barbosa
 
 #include"Funcionario.h"
 #include<string>
+#include<fstream>
 
 class Veterinario : public Funcionario{
 
@@ -19,6 +20,8 @@ class Veterinario : public Funcionario{
         void setCrmv(std::string m_crmv);
 
         void details(); 
+
+        bool save();
 };
     
 #endif

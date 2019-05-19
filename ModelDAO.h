@@ -13,7 +13,7 @@ class ModelDAO{
 
 
     protected:
-    
+        std::string pathToFile;
     public:
 
         /*
@@ -24,7 +24,7 @@ class ModelDAO{
         /*
         *   Read
         */
-        ModelDAO* find(int id);
+        static ModelDAO* find(int id);
         static std::list<ModelDAO*> where(std::string expression); 
         static std::list<ModelDAO*> all(); 
 

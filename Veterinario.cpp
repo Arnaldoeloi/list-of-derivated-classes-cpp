@@ -1,4 +1,5 @@
 #include<iostream>
+#include<fstream>
 #include "Veterinario.h"
 
 Veterinario::Veterinario(){
@@ -24,4 +25,14 @@ void Veterinario::details(){
     std::cout<<"Fator RH: "<<m_fator_rh<<std::endl;
     std::cout<<"Especialidade: "<<m_especialidade<<std::endl;
     std::cout<<"Nivel de seguranca: "<<m_crmv<<std::endl<<std::endl;
+}
+
+bool Veterinario::save(){
+    std::ofstream file;
+    file.open(Veterinario::pathToFile);
+
+    file<<m_id<<"Tratador"<<';'<<m_nome<<';'<<m_cpf<<';'<<m_idade<<';'<<m_tipo_sanguineo<<';'<<m_fator_rh<<';'<<m_especialidade<<';'<<m_crmv<<';'<<';'<<std::endl;
+
+    file.close();
+    return true;
 }

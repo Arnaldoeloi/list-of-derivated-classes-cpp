@@ -8,6 +8,7 @@ LFLAGS	 =
 
 all: $(OBJS)
 	$(CC) -g $(OBJS) -o $(OUT) $(LFLAGS)
+	make clean
 
 Funcionario.o: Funcionario.cpp
 	$(CC) $(FLAGS) Funcionario.cpp 
@@ -23,4 +24,4 @@ Veterinario.o: Veterinario.cpp
 
 
 clean:
-	rm -f $(OBJS) $(OUT)
+	rm -f $(OBJS) 

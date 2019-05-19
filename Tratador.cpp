@@ -1,4 +1,5 @@
 #include<iostream>
+#include<fstream>
 #include "Tratador.h"
 #include "Funcionario.h"
 
@@ -27,4 +28,21 @@ void Tratador::details(){
     std::cout<<"Fator RH: "<<m_fator_rh<<std::endl;
     std::cout<<"Especialidade: "<<m_especialidade<<std::endl;
     std::cout<<"Nivel de seguranca: "<<m_nivel_de_seguranca<<std::endl<<std::endl;
+}
+
+
+bool Tratador::save(){
+    std::ofstream file;
+    std::cout<<Tratador::pathToFile;
+    file.open(Tratador::pathToFile, std::ios::app); //app significa Append, ou seja, escrita no fim do arquivo
+
+    if(file.is_open()){
+        std::cout<<"Saving..."<<std::endl;
+        file<<m_id<<';'<<"Tratador"<<';'<<m_nome<<';'<<m_cpf<<';'<<m_idade<<';'<<m_tipo_sanguineo<<';'<<m_fator_rh<<';'<<m_especialidade<<';'<<';'<<m_nivel_de_seguranca<<std::endl;
+    }else{
+        std::cerr<<"Couldn't open the file!"<<std::endl;
+    }
+
+    file.close();
+    return true;
 }

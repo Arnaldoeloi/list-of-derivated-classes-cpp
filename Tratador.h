@@ -19,6 +19,8 @@ class Tratador : public Funcionario{
         void setNivelDeSeguranca(std::string nivel_de_seguranca);
 
         void details(); 
+
+        bool save();
 };
     
 #endif

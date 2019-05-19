@@ -15,6 +15,7 @@ class Funcionario : public ModelDAO{
 
     private:
     protected:
+        std::string pathToFile = "funcionarios.csv";
         int m_id;
         std::string m_nome;
         std::string m_cpf;
@@ -22,7 +23,6 @@ class Funcionario : public ModelDAO{
         short m_tipo_sanguineo;
         char m_fator_rh;
         std::string m_especialidade;
-
         void addToList();
     
     public:
@@ -35,6 +35,7 @@ class Funcionario : public ModelDAO{
         static std::list<Funcionario*> where(std::string expression); 
         static std::list<Funcionario*> all();
 
+        virtual bool save() = 0;
         virtual void details() = 0; 
 };
     
